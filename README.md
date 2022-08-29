@@ -1,2 +1,2 @@
-# manipulador-caracteres
+# Manipulador de Caracteres em Python
  
