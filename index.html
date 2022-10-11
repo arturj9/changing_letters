@@ -14,21 +14,37 @@
                 <h1>changing letters</h1>
             </div>
             <div class="area-principal">
-                <textarea name="" id="text" cols="30" rows="10"></textarea>
-                <div class="area-efeitos">
-                    <div class="efeito">AAA</div>
-                    <div class="efeito">aaa</div>
-                    <div class="efeito">Aaa</div>
-                    <div class="efeito">aAA</div>
-                    <div class="efeito">a b</div>
-                    <div class="efeito">ab</div>
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                <div class="area-efeitos-g">
+                    <h2>efeitos</h2>
+                        <div class="area-efeitos-p">
+                        <div class="efeito" id="e1">AAA</div>
+                        <div class="efeito" id="e2">aaa</div>
+                        <div class="efeito" id="e3">Aaa</div>
+                        <div class="efeito" id="e3">aAA</div>
+                        <div class="efeito" id="e3">a b</div>
+                        <div class="efeito" id="e4">ab</div>
+                    </div>
                 </div>
                 <div class="area-botoes">
-                    <button onclick="alert('aplicadissimo')">Aplicar efeito</button>
-                    <button>copiar</button>
+                    <button onclick="aplicarEfeito()">aplicar</button>
+                    <button onclick="copiarTexto()">copiar</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        let copiarTexto = () =>{
+            const text = document.querySelector("#text");
+            text.select();
+            document.execCommand('copy');
+        }
+
+        let aplicarEfeito = () =>{
+            const text = document.querySelector("#text");
+            text.select();
+            text.value = 'Hello world';
+        }
+    </script>
 </body>
 </html>
