@@ -62,10 +62,12 @@ h2{
     border-radius: 15px;
     margin-right: 3%;
     cursor: pointer;
+    box-shadow: none;
+    outline: none;
 }
 
-.efeito::selection{
-    border: solid 1px #000;
+.efeito:first-child{
+    border: solid 2.5px rgb(9, 156, 107);
 }
 
 

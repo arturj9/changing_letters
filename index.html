@@ -17,13 +17,13 @@
                 <textarea name="text" id="text" cols="30" rows="10"></textarea>
                 <div class="area-efeitos-g">
                     <h2>efeitos</h2>
-                        <div class="area-efeitos-p">
-                        <div class="efeito" id="e1">AAA</div>
-                        <div class="efeito" id="e2">aaa</div>
-                        <div class="efeito" id="e3">Aaa</div>
-                        <div class="efeito" id="e3">aAA</div>
-                        <div class="efeito" id="e3">a b</div>
-                        <div class="efeito" id="e4">ab</div>
+                    <div class="area-efeitos-p">
+                        <button onclick="escolherEfeito('AAA')" class="efeito" id="e1" value="AAA">AAA</button>
+                        <button onclick="escolherEfeito('aaa')" class="efeito" id="e2" value="aaa">aaa</button>
+                        <button onclick="escolherEfeito('Aaa')" class="efeito" id="e3" value="Aaa">Aaa</button>
+                        <button onclick="escolherEfeito('aAA')" class="efeito" id="e3" value="aAA">aAA</button>
+                        <button onclick="escolherEfeito('a b')" class="efeito" id="e3" value="a b">a b</button>
+                        <button onclick="escolherEfeito('abb')" class="efeito" id="e4" value="ab">ab</button>
                     </div>
                 </div>
                 <div class="area-botoes">
@@ -34,6 +34,9 @@
         </div>
     </div>
     <script>
+        var efeito = "AAA";
+        var efeitosButton = document.getElementsByClassName("efeito")
+
         let copiarTexto = () =>{
             const text = document.querySelector("#text");
             text.select();
@@ -42,9 +45,33 @@
 
         let aplicarEfeito = () =>{
             const text = document.querySelector("#text");
-            text.select();
-            text.value = 'Hello world';
+            if(text!=' '){
+                text.select();
+                $.ajax({
+                    url:`https://localhost:8000/efeitos&efeito${efeito}=&text=${text.value}`,
+                    method:'post',
+                    async:true,
+                    success:function(resposta){
+                        conlode.log(resposta)
+                    },
+                })
+            }else{
+                alert('Informe o texto')
+            }
         }
+
+        function escolherEfeito(valor){
+            efeito = valor;
+            for(let i=0;i<efeitosButton.length;i++){
+                if(efeitosButton[i].value==valor){
+                    efeitosButton[i].style.border = "solid 2.5px rgb(9, 156, 107)";
+                }else{
+                    efeitosButton[i].style.border = "none";
+                }
+            }
+        }
+
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 </html>
