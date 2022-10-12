@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo{
+    width: 80%;
+    height: 60%;
+}
+
+.area-logo{
+    color: rgb(9, 156, 107);
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-size: 32px;
+}
+
+#text{
+    border: none;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    margin: 3% 0 0 0;
+    border: solid 1px rgb(146, 139, 139);
+}
+
+h2{
+    margin: 3% 0;
+}
+
+.area-efeitos-p{
+    display: flex;
+    justify-content: center;
+}
+
+.efeito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(164, 192, 192);
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+    margin-right: 3%;
+    cursor: pointer;
+}
+
+.efeito::selection{
+    border: solid 1px #000;
+}
+
+
+.area-botoes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3% 0;
+}
+
+button{
+    width: 70px;
+    height: 40px;
+    margin-right: 3%;
+    text-decoration: none;
+    border: none;
+    background-color: rgb(20, 194, 194);
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+}
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>changing letters</title>
+</head>
+<body>
+    <div class="container">
+        <div class="conteudo">
+            <div class="area-logo">
+                <h1>changing letters</h1>
+            </div>
+            <div class="area-principal">
+                <textarea name="text" id="text" cols="30" rows="10"></textarea>
+                <div class="area-efeitos-g">
+                    <h2>efeitos</h2>
+                        <div class="area-efeitos-p">
+                        <div class="efeito" id="e1">AAA</div>
+                        <div class="efeito" id="e2">aaa</div>
+                        <div class="efeito" id="e3">Aaa</div>
+                        <div class="efeito" id="e3">aAA</div>
+                        <div class="efeito" id="e3">a b</div>
+                        <div class="efeito" id="e4">ab</div>
+                    </div>
+                </div>
+                <div class="area-botoes">
+                    <button onclick="aplicarEfeito()">aplicar</button>
+                    <button onclick="copiarTexto()">copiar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let copiarTexto = () =>{
+            const text = document.querySelector("#text");
+            text.select();
+            document.execCommand('copy');
+        }
+
+        let aplicarEfeito = () =>{
+            const text = document.querySelector("#text");
+            text.select();
+            text.value = 'Hello world';
+        }
+    </script>
+</body>
+</html>
