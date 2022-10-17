@@ -22,8 +22,8 @@
                         <button onclick="escolherEfeito('aaa')" class="efeito" id="e2" value="aaa">aaa</button>
                         <button onclick="escolherEfeito('Aaa')" class="efeito" id="e3" value="Aaa">Aaa</button>
                         <button onclick="escolherEfeito('aAA')" class="efeito" id="e3" value="aAA">aAA</button>
-                        <button onclick="escolherEfeito('a b')" class="efeito" id="e3" value="a b">a b</button>
-                        <button onclick="escolherEfeito('abb')" class="efeito" id="e4" value="ab">ab</button>
+                        <button onclick="escolherEfeito('a_b')" class="efeito" id="e3" value="a_b">a b</button>
+                        <button onclick="escolherEfeito('abb')" class="efeito" id="e4" value="abb">abb</button>
                     </div>
                 </div>
                 <div class="area-botoes">
@@ -47,12 +47,17 @@
             const text = document.querySelector("#text");
             if(text!=' '){
                 text.select();
+                var urle = `http://127.0.0.1:8000/efeitos?efeito=${efeito}&text=${text.value}`
                 $.ajax({
-                    url:`https://localhost:8000/efeitos&efeito${efeito}=&text=${text.value}`,
+                    url:urle,
                     method:'post',
                     async:true,
                     success:function(resposta){
-                        conlode.log(resposta)
+                        if(resposta['status']==0){
+
+                        }else{
+                            text.value=resposta['text'];
+                        }
                     },
                 })
             }else{
