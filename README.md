@@ -1,5 +1,7 @@
 # Changing Letters
 
+Veja o projeto: [site](https://arturj9.github.io/changing_letters/)
+
 Stacks: Python, html, css.
 
 Objetivo: manipular palavras/caracteres de frases.
