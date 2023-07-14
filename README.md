@@ -1,6 +1,6 @@
 # Changing Letters
 
-Veja o projeto: [site](https://arturj9.github.io/changing_letters/)
+Veja o projeto: <a href="https://arturj9.github.io/changing_letters/" target="_blank">SITE</a>
 
 Stacks: Python, html, css.
 
